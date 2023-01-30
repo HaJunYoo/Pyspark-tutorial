@@ -2,6 +2,11 @@
 
 ### How to use spark using python by Colab
 
+- Spark Version
+  - spark-3.3.1
+  - hadoop2
+  - JAVA : openjdk 1.8.0_352
+
 - Pyspark was run in colab and practiced.
 
 - colab 내부에 아래의 코드를 통해 spark 실습 환경을 구성한 후 spark context 및 session을 구동시켜야합니다.
@@ -25,6 +30,7 @@ os.environ["SPARK_HOME"] = "/content/spark-3.3.1-bin-hadoop2"
 
 # need to update-alternatives => openjdk version "1.8.0_352"
 !update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+!java -version
 
 import findspark
 findspark.init()
