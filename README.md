@@ -18,6 +18,9 @@ import os
 os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
 os.environ["SPARK_HOME"] = "/content/spark-3.3.1-bin-hadoop2"
 
+# need to update-alternatives
+!update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
 import findspark
 findspark.init()
 
