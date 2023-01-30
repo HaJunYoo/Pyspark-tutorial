@@ -8,7 +8,9 @@
   - Within the colab, you must configure the spark practice environment using the code below before running the spark context and session.
   
 - need to update-alternatives (Java 버젼 세팅 , Java Version Settings)
-
+  - openjdk version "1.8.0_352"
+    - (OpenJDK Runtime Environment (build 1.8.0_352-8u352-ga-1~20.04-b08))
+    
 ```python
 
 !apt-get install openjdk-8-jdk-headless -qq > /dev/null
@@ -21,7 +23,7 @@ import os
 os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
 os.environ["SPARK_HOME"] = "/content/spark-3.3.1-bin-hadoop2"
 
-# need to update-alternatives
+# need to update-alternatives => openjdk version "1.8.0_352"
 !update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 import findspark
