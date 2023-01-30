@@ -6,6 +6,8 @@
 
 - colab 내부에 아래의 코드를 통해 spark 실습 환경을 구성한 후 spark context 및 session을 구동시켜야합니다.
 
+- need to update-alternatives (Java 버젼 세팅)
+
 ```python
 
 !apt-get install openjdk-8-jdk-headless -qq > /dev/null
