@@ -1,12 +1,13 @@
 # Pyspark-tutorial
 
-### python을 이용한 spark 이용법 by Colab
+### How to use spark using python by Colab
 
-- pyspark를 colab에서 구동하여 실습하였습니다. 
+- Pyspark was run in colab and practiced.
 
 - colab 내부에 아래의 코드를 통해 spark 실습 환경을 구성한 후 spark context 및 session을 구동시켜야합니다.
-
-- need to update-alternatives (Java 버젼 세팅)
+  - Within the colab, you must configure the spark practice environment using the code below before running the spark context and session.
+  
+- need to update-alternatives (Java 버젼 세팅 , Java Version Settings)
 
 ```python
 
