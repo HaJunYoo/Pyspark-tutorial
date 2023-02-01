@@ -41,4 +41,11 @@ spark = SparkSession.builder.appName("spark3_test").master("local[*]").getOrCrea
 
 import pyspark
 
+# sc object generation
+from pyspark import SparkContext, SparkConf
+
+conf = SparkConf().setMaster("local").setAppName("myfriend")
+sc = SparkContext.getOrCreate(conf=conf)
+
+
 ```
