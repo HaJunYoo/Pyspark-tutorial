@@ -1,6 +1,8 @@
 # Pyspark-tutorial
 
-### How to use spark using python by Colab
+## How to use spark using python by Colab
+
+### 2023 이전 
 
 - Spark Version
   - spark-3.3.1
@@ -48,4 +50,36 @@ conf = SparkConf().setMaster("local").setAppName("myfriend")
 sc = SparkContext.getOrCreate(conf=conf)
 
 
+```
+
+### 2023.03.01
+- colab 내 java의 버젼 : 11.0.17 
+  ```
+  openjdk version "11.0.17" 2022-10-18
+  OpenJDK Runtime Environment (build 11.0.17+8-post-Ubuntu-1ubuntu220.04)
+  OpenJDK 64-Bit Server VM (build 11.0.17+8-post-Ubuntu-1ubuntu220.04, mixed mode,  sharing)
+  ```
+- spark 3.3.1이 위의 버젼과 호환이 가능해짐
+- 다음과 같이 설정이 바뀜
+```
+!pip install pyspark==3.3.1 py4j==0.10.9.5 
+!pip install -q findspark
+
+import findspark
+findspark.init()
+
+from pyspark.sql import SparkSession
+from pyspark import SparkConf
+
+conf = SparkConf()
+conf.set("spark.app.name", "logistic-regression")
+conf.set("spark.master", "local[*]")
+
+# Singleton pattern
+spark = SparkSession.builder\
+        .config(conf=conf)\
+        .getOrCreate()
+
+# csv read to dataframe
+df = spark.read.format("text").load("1800.csv")
 ```
