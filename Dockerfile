@@ -10,10 +10,18 @@ RUN echo "jovyan:jovyan" | chpasswd
 
 # Update packages and install requirements
 RUN apt-get update -y && \
+    apt-get install -y wget && \
     apt-get install -y default-jdk scala && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+
+# Download JDBC driver
+RUN mkdir -p /usr/local/lib/python3.10/dist-packages/pyspark/jars/ && \
+    wget -P /usr/local/lib/python3.10/dist-packages/pyspark/jars https://s3.amazonaws.com/redshift-downloads/drivers/jdbc/2.1.0.14/redshift-jdbc42-2.1.0.14.jar
+
+# Change ownership of the jars directory to jovyan
+RUN chown -R jovyan:jovyan /usr/local/lib/python3.10/dist-packages/pyspark/jars
 
 # Install Python packages
 RUN pip install --no-cache-dir spylon-kernel py4j==0.10.9.5 && \
