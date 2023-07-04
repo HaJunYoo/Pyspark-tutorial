@@ -1,6 +1,6 @@
 # Pyspark-tutorial
 
-## How to use spark using python by Colab
+## How to use spark using python by Colab or Docker
 | Pyspark을 사용하며 실습 환경은 Google Colab과 개인컴퓨터에서 설치하는 Spark standalone 모드의 Spark입니다.
 
 ### 2023.07
