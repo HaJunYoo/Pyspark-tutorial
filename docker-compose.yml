@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+    restart: always
+    volumes:
+      - .:/home/jovyan
