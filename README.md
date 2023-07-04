@@ -3,7 +3,7 @@
 ## How to use spark using python by Colab or Docker
 | Pyspark을 사용하며 실습 환경은 Google Colab과 개인컴퓨터에서 설치하는 Spark standalone 모드의 Spark입니다.
 
-### 2023.07
+### 2023.07 (Docker)
 - docker를 이용한 spark 설치
   - docker compose up
   ```
@@ -21,7 +21,7 @@
   
   ```
 
-### 2023.03.01
+### 2023.03.01 (Colab)
 - colab 내 java의 버젼 : 11.0.17 
   ```
   openjdk version "11.0.17" 2022-10-18
