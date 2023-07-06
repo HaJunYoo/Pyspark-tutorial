@@ -21,8 +21,12 @@ RUN apt-get update -y && \
 
 # Download JDBC driver
 RUN cd /usr/local/spark-3.3.1-bin-hadoop3/jars && \
-    if ! wget -P /usr/local/spark-3.3.1-bin-hadoop3/jars https://s3.amazonaws.com/redshift-downloads/drivers/jdbc/2.1.0.14/redshift-jdbc42-2.1.0.14.jar; then \
-        echo "Failed to download Redshift JDBC driver"; \
+    if [ ! -f redshift-jdbc42-2.1.0.14.jar ]; then \
+        if ! wget -P /usr/local/spark-3.3.1-bin-hadoop3/jars https://s3.amazonaws.com/redshift-downloads/drivers/jdbc/2.1.0.14/redshift-jdbc42-2.1.0.14.jar; then \
+            echo "Failed to download Redshift JDBC driver"; \
+        fi \
+    else \
+        echo "Redshift JDBC driver already exists"; \
     fi
 # Change ownership of the jars directory to jovyan
 # RUN chown -R jovyan:jovyan /usr/local/lib/python3.10/dist-packages/pyspark/jars
