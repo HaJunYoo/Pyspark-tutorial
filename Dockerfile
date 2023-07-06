@@ -16,12 +16,17 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
 
-# Download JDBC driver
-RUN mkdir -p /usr/local/lib/python3.10/dist-packages/pyspark/jars/ && \
-    wget -P /usr/local/lib/python3.10/dist-packages/pyspark/jars https://s3.amazonaws.com/redshift-downloads/drivers/jdbc/2.1.0.14/redshift-jdbc42-2.1.0.14.jar
+# RUN mkdir -p /usr/local/lib/python3.10/dist-packages/pyspark/jars/ && \
+#     wget -P /usr/local/lib/python3.10/dist-packages/pyspark/jars https://s3.amazonaws.com/redshift-downloads/drivers/jdbc/2.1.0.14/redshift-jdbc42-2.1.0.14.jar
 
+# Download JDBC driver
+RUN cd /usr/local/spark-3.3.1-bin-hadoop3/jars && \
+    if ! wget -P /usr/local/spark-3.3.1-bin-hadoop3/jars https://s3.amazonaws.com/redshift-downloads/drivers/jdbc/2.1.0.14/redshift-jdbc42-2.1.0.14.jar; then \
+        echo "Failed to download Redshift JDBC driver"; \
+    fi
 # Change ownership of the jars directory to jovyan
-RUN chown -R jovyan:jovyan /usr/local/lib/python3.10/dist-packages/pyspark/jars
+# RUN chown -R jovyan:jovyan /usr/local/lib/python3.10/dist-packages/pyspark/jars
+RUN chown -R jovyan:jovyan /usr/local/spark-3.3.1-bin-hadoop3/jars
 
 # Install Python packages
 RUN pip install --no-cache-dir spylon-kernel py4j==0.10.9.5 && \

@@ -5,21 +5,29 @@
 
 ### 2023.07 (Docker)
 - docker를 이용한 spark 설치
-  - docker compose up
-  ```
-  .
-  ├── 0.Set-up
-  ├── 1.Pyspark-tutorial
-  ├── 2.RDD, Dataframe
-  ├── 3.Spark_SQL
-  ├── 4.Spark_ML
-  ├── Dockerfile
-  ├── README.md
-  ├── docker-compose.yml
-  ├── hadoop
-  └── spark
-  
-  ```
+  - root 경로에서 `docker compose up` 실행
+    ```
+    .
+    ├── 0.Set-up
+    ├── 1.Pyspark-tutorial
+    ├── 2.RDD, Dataframe
+    ├── 3.Spark_SQL
+    ├── 4.Spark_ML
+    ├── Dockerfile ## here
+    ├── README.md
+    ├── docker-compose.yml ## here
+    ├── hadoop
+    └── spark
+    
+    ```
+  - 만약 필요한 jdbc 드라이버가 존재한다면 /usr/local/spark-3.3.1-bin-hadoop3/jars 경로에 넣어주면 됩니다. (Dockerfile에 작성 요망)  
+    ```
+    RUN cd /usr/local/spark-3.3.1-bin-hadoop3/jars && \
+      if ! wget -P /usr/local/spark-3.3.1-bin-hadoop3/jars https://s3.amazonaws.com/redshift-downloads/drivers/jdbc/2.1.0.14/redshift-jdbc42-2.1.0.14.jar; then \
+          echo "Failed to download Redshift JDBC driver"; \
+      fi
+    ```
+
 
 ### 2023.03.01 (Colab)
 - colab 내 java의 버젼 : 11.0.17 
