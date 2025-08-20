@@ -127,3 +127,36 @@ spark-warehouse/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/jupyternotebooks,spark
+
+# Claude Code files
+CLAUDE.md
+.claude/
+
+# Spark Practice Files - Output and Temporary Data
+# Spark output directories with _SUCCESS and part-* files
+*/_SUCCESS
+part-*.json
+part-*.csv
+part-*.avro
+part-*.parquet
+*.snappy.parquet
+
+# Spark checkpoint directories
+chk-point-*
+*checkpoint*
+
+# Spark streaming state files
+*.delta
+*.snapshot
+
+# Spark output directories
+dataOutput/
+extracted*/
+language50_*/
+artifacts/
+small_data/
+large_data/
+
+# Spark warehouse and metastore
+spark-warehouse/
+metastore_db/

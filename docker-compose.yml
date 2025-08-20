@@ -11,4 +11,5 @@ services:
       - "9999:9999"
     restart: always
     volumes:
-      - .:/home/jovyan
+      - .:/home/jovyan/work
+    working_dir: /home/jovyan/work

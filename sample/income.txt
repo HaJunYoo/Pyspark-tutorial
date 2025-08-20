@@ -1,0 +1,30 @@
+John Smith,Software Engineer,US,85000
+Alice Johnson,Data Scientist,UK,92000
+Bob Brown,Product Manager,US,78000
+Carol Davis,Marketing Manager,CA,65000
+David Wilson,DevOps Engineer,DE,75000
+Emma Taylor,UX Designer,US,68000
+Frank Miller,Backend Developer,AU,72000
+Grace Lee,Frontend Developer,KR,70000
+Henry Clark,System Administrator,US,60000
+Isabel Garcia,Database Administrator,MX,71000
+Jack Martinez,Machine Learning Engineer,US,95000
+Kelly Rodriguez,Business Analyst,US,64000
+Leo Anderson,Cloud Architect,UK,88000
+Maria Gonzalez,Quality Assurance,ES,58000
+Nathan Thomas,Security Engineer,US,82000
+Olivia Jackson,Technical Writer,CA,55000
+Peter White,Project Manager,US,76000
+Quinn Harris,Site Reliability Engineer,US,89000
+Rachel Martin,Data Analyst,AU,67000
+Samuel Thompson,Full Stack Developer,US,79000
+Tina Lewis,Mobile Developer,UK,74000
+Victor Walker,Solutions Architect,DE,91000
+Wendy Hall,Scrum Master,US,69000
+Xavier Allen,Research Scientist,US,98000
+Yolanda Young,Product Owner,CA,73000
+Zachary King,Technology Lead,US,87000
+Amy Wright,Software Architect,US,94000
+Brian Lopez,Senior Developer,UK,81000
+Catherine Hill,IT Manager,US,77000
+Daniel Scott,Network Engineer,DE,66000
