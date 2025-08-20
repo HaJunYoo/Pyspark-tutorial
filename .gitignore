@@ -160,3 +160,6 @@ large_data/
 # Spark warehouse and metastore
 spark-warehouse/
 metastore_db/
+
+# Apache Ivy cache directory
+.ivy2/
